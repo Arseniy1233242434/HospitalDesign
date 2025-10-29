@@ -10,6 +10,8 @@
                 <ResourceDictionary Source="/Styles/AddButton.xaml"/>
                 <ResourceDictionary Source="/Styles/DeleteButton.xaml"/>
                 <ResourceDictionary Source="/Styles/StandartButton.xaml"/>
+                <ResourceDictionary Source="/Styles/WindowStyle.xaml"/>
+                <ResourceDictionary Source="/Styles/PageStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

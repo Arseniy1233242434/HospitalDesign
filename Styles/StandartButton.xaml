@@ -4,7 +4,8 @@
         <Setter Property="Foreground" Value="{DynamicResource StandartButtonForeground}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource StandartButtonBorder}"/>
         <Setter Property="BorderThickness" Value="1"/>
-        
+        <Setter Property="Background" Value="{DynamicResource StandartButtonBackground}"/>
+
 
         <Setter Property="Template">
             <Setter.Value>

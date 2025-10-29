@@ -11,18 +11,18 @@
     <DockPanel>
         <Grid x:Name="Authorisationn">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="80"></RowDefinition>
+                <RowDefinition Height="150"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="60"></RowDefinition>
                 <RowDefinition Height="80"></RowDefinition>
             </Grid.RowDefinitions>
-            <Label Content="Идентификатор" Margin="200,100,0,0" Grid.Row="0"></Label>
-            <TextBox Grid.Row="0" Margin="100,90,0,0" Height="25" Width="180" Text="{Binding Path=ID, Mode=OneWayToSource}"></TextBox>
+            <Label Content="Идентификатор" Margin="200,105,0,0" Grid.Row="0"></Label>
+            <TextBox Grid.Row="0" Margin="80,90,0,0" Height="25" Width="200" Text="{Binding Path=ID, Mode=OneWayToSource}"></TextBox>
 
-            <Label Content="Пароль" Grid.Row="1" Margin="200,55,0,0"></Label>
-            <TextBox Grid.Row="1" Margin="100,0,0,0" Height="25" Width="180" Text="{Binding Path=Password, Mode=OneWayToSource}"></TextBox>
-            <Button Style="{StaticResource StandartButtonStyle}" Content="Войти" Grid.Row="2"  Width="220" Height="30" Margin="0,0,160,0" Click="Authorisation_Click"></Button>
-            <Button Style="{StaticResource StandartButtonStyle}" Content="Регистрация" Grid.Row="3"  Width="220" Height="30" Margin="0,0,160,40" Click="Registration_Click"></Button>
+            <Label Content="Пароль" Grid.Row="1" Margin="200,34,0,0"></Label>
+            <TextBox Grid.Row="1" Margin="80,0,0,0" Height="25" Width="200" Text="{Binding Path=Password, Mode=OneWayToSource}"></TextBox>
+            <Button Style="{StaticResource StandartButtonStyle}" Content="Войти" Grid.Row="2"  Width="340" Height="30" Margin="110,0,160,0" Click="Authorisation_Click"></Button>
+            <Button Style="{StaticResource StandartButtonStyle}" Content="Регистрация" Grid.Row="3"  Width="340" Height="30" Margin="110,0,160,40" Click="Registration_Click"></Button>
         </Grid>
 
     </DockPanel>

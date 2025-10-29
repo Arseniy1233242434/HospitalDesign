@@ -18,22 +18,22 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="60"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="70"/>
 
 
             </Grid.RowDefinitions>
            
-            <Label Content="Дата приёма" Grid.Row="0"></Label>
-            <DatePicker Grid.Row="0" Margin="100,0,0,0" Height="25" Width="180" Text="{Binding Path=Appointment.Date, Mode=TwoWay}"></DatePicker>
+            <Label Content="Дата приёма" Grid.Row="0" Margin="0,35,0,0"></Label>
+            <DatePicker Grid.Row="0" Margin="60,0,0,0" Height="25" Width="220" Text="{Binding Path=Appointment.Date, Mode=TwoWay}"></DatePicker>
 
-            <Label Content="Диагноз" Grid.Row="1"></Label>
+            <Label Content="Диагноз" Grid.Row="1" Margin="0,35,0,0"></Label>
             <TextBox Grid.Row="1" Margin="60,0,0,0" Height="25" Width="220" Text="{Binding Path=Appointment.Diagnosis, Mode=TwoWay}"></TextBox>
-            <Label Content="Рекомендации" Grid.Row="2"></Label>
+            <Label Content="Рекомендации" Grid.Row="2" Margin="0,35,0,0"></Label>
             <TextBox Grid.Row="2" Margin="60,0,0,0" Height="25" Width="220" Text="{Binding Path=Appointment.Recomendations, Mode=TwoWay}"></TextBox>
 
 
-            <Button Style="{StaticResource AddButtonStyle}" Content="Сохранить" Grid.Row="3" Click="Button_Click"></Button>
+            <Button Style="{StaticResource AddButtonStyle}" Grid.Row="3" Click="Button_Click"></Button>
             <Button Style="{StaticResource StandartButtonStyle}" Content="Назад" Grid.Row="4" Click="Button_Click_1"></Button>
         </Grid>
         <Grid Grid.Column="1" >
@@ -53,7 +53,7 @@ ItemsSource="{Binding  Patient.Appointments}"
                         <StackPanel>
                             
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Дата приёма: "/>
+                                <TextBlock Text="Дата приёма:"/>
                                 <TextBlock Text="{Binding Date}"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">

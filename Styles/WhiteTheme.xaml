@@ -6,7 +6,7 @@
     <SolidColorBrush x:Key="StandartButtonForeground" Color="Black"/>
     <SolidColorBrush x:Key="StandartButtonBorder" Color="#005A9E"/>
 
-    <SolidColorBrush x:Key="AddButtonBackground" Color="#00FF7F"/>
+    <SolidColorBrush x:Key="AddButtonBackground" Color="#6B8E23"/>
     <SolidColorBrush x:Key="AddButtonHover" Color="#3CB371"/>
     <SolidColorBrush x:Key="AddButtonPressed" Color="#228B22"/>
 
@@ -15,7 +15,7 @@
     <SolidColorBrush x:Key="DeleteButtonPressed" Color="#FF6347"/>
 
 
-    <SolidColorBrush x:Key="WindowBackground" Color="#40E0D0"/>
+    <SolidColorBrush x:Key="WindowBackground" Color="#E0FFFF"/>
 
 
 </ResourceDictionary>

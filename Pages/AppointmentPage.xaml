@@ -23,14 +23,14 @@
 
 
             </Grid.RowDefinitions>
-           
-            <Label Content="Дата приёма" Grid.Row="0" Margin="0,35,0,0"></Label>
-            <DatePicker Grid.Row="0" Margin="60,0,0,0" Height="25" Width="220" Text="{Binding Path=Appointment.Date, Mode=TwoWay}"></DatePicker>
 
-            <Label Content="Диагноз" Grid.Row="1" Margin="0,35,0,0"></Label>
-            <TextBox Grid.Row="1" Margin="60,0,0,0" Height="25" Width="220" Text="{Binding Path=Appointment.Diagnosis, Mode=TwoWay}"></TextBox>
-            <Label Content="Рекомендации" Grid.Row="2" Margin="0,35,0,0"></Label>
-            <TextBox Grid.Row="2" Margin="60,0,0,0" Height="25" Width="220" Text="{Binding Path=Appointment.Recomendations, Mode=TwoWay}"></TextBox>
+            <Label Content="Дата приёма" Grid.Row="0" Style="{StaticResource Label1}"></Label>
+            <DatePicker Grid.Row="0" Style="{StaticResource Datepicker1}" Text="{Binding Path=Appointment.Date, Mode=TwoWay}"></DatePicker>
+
+            <Label Content="Диагноз" Grid.Row="1" Style="{StaticResource Label1}"></Label>
+            <TextBox Style="{StaticResource Textbox1}" Grid.Row="1"  Text="{Binding Path=Appointment.Diagnosis, Mode=TwoWay}"></TextBox>
+            <Label Content="Рекомендации" Grid.Row="2" Style="{StaticResource Label1}"></Label>
+            <TextBox Grid.Row="2" Style="{StaticResource Textbox1}" Text="{Binding Path=Appointment.Recomendations, Mode=TwoWay}"></TextBox>
 
 
             <Button Style="{StaticResource AddButtonStyle}" Grid.Row="3" Click="Button_Click"></Button>

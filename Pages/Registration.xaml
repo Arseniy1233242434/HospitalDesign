@@ -18,23 +18,23 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Label Content="Фамилия" Grid.Row="0" Margin="0,15,0,0"></Label>
-        <TextBox Grid.Row="0" Margin="0,0,200,0" Height="25" Width="220" Text="{Binding Path=LastName, Mode=OneWayToSource}"></TextBox>
+        <Label Content="Фамилия" Grid.Row="0" Style="{StaticResource Label2}"></Label>
+        <TextBox Grid.Row="0" Style="{StaticResource Textbox2}" Text="{Binding Path=LastName, Mode=OneWayToSource}"></TextBox>
 
-        <Label Content="Имя" Grid.Row="1" Margin="0,15,0,0"></Label>
-        <TextBox Grid.Row="1" Margin="0,0,200,0" Height="25" Width="220" Text="{Binding Path=Name, Mode=OneWayToSource}"></TextBox>
+        <Label Content="Имя" Grid.Row="1" Style="{StaticResource Label2}"></Label>
+        <TextBox Grid.Row="1" Style="{StaticResource Textbox2}" Text="{Binding Path=Name, Mode=OneWayToSource}"></TextBox>
 
-        <Label Content="Отчество" Grid.Row="2" Margin="0,15,0,0"></Label>
-        <TextBox Grid.Row="2" Margin="0,0,200,0" Height="25" Width="220" Text="{Binding Path=MiddleName, Mode=OneWayToSource}"></TextBox>
+        <Label Content="Отчество" Grid.Row="2" Style="{StaticResource Label2}"></Label>
+        <TextBox Grid.Row="2" Style="{StaticResource Textbox2}" Text="{Binding Path=MiddleName, Mode=OneWayToSource}"></TextBox>
 
-        <Label Content="Специализация" Grid.Row="3" Margin="0,15,0,0"></Label>
-        <TextBox Grid.Row="3" Margin="0,0,200,0" Height="25" Width="220" Text="{Binding Path=Specialization, Mode=OneWayToSource}"></TextBox>
+        <Label Content="Специализация" Grid.Row="3" Style="{StaticResource Label2}"></Label>
+        <TextBox Grid.Row="3" Style="{StaticResource Textbox2}" Text="{Binding Path=Specialization, Mode=OneWayToSource}"></TextBox>
 
-        <Label Content="Пароль" Grid.Row="4" Margin="0,15,0,0"></Label>
-        <TextBox Grid.Row="4" Margin="0,0,200,0" Height="25" Width="220" Text="{Binding Path=Password, Mode=OneWayToSource}"></TextBox>
+        <Label Content="Пароль" Grid.Row="4" Style="{StaticResource Label2}"></Label>
+        <TextBox Grid.Row="4" Style="{StaticResource Textbox2}" Text="{Binding Path=Password, Mode=OneWayToSource}"></TextBox>
 
-        <Label Content="Подтверждение пароля" Grid.Row="5" Margin="0,15,0,0"></Label>
-        <TextBox Grid.Row="5" Margin="0,0,200,0" Height="25" Width="220" Text="{Binding Path=SecondPassword, Mode=OneWayToSource}"></TextBox>
+        <Label Content="Подтверждение пароля" Grid.Row="5" Style="{StaticResource Label2}"></Label>
+        <TextBox Grid.Row="5" Style="{StaticResource Textbox2}" Text="{Binding Path=SecondPassword, Mode=OneWayToSource}"></TextBox>
         <Button Style="{StaticResource StandartButtonStyle}" Content="Зарегистрироваться" Grid.Row="6" Click="Registration_Click"></Button>
     </Grid>
 </Page>

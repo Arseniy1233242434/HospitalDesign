@@ -19,20 +19,20 @@
             <RowDefinition Height="50"/>
 
         </Grid.RowDefinitions>
-        <Label Content="Фамилия" Grid.Row="0" Margin="0,20,0,0"></Label>
-        <TextBox Grid.Row="0" Margin="0,0,200,0" Height="25" Width="220" Text="{Binding Path=LastName, Mode=TwoWay}"></TextBox>
+        <Label Content="Фамилия" Grid.Row="0" Style="{StaticResource Label2}"></Label>
+        <TextBox Grid.Row="0" Style="{StaticResource Textbox2}" Text="{Binding Path=LastName, Mode=TwoWay}"></TextBox>
 
-        <Label Content="Имя" Grid.Row="1" Margin="0,20,0,0"></Label>
-        <TextBox Grid.Row="1"  Margin="0,0,200,0" Height="25" Width="220" Text="{Binding Path=Name, Mode=TwoWay}"></TextBox>
+        <Label Content="Имя" Grid.Row="1" Style="{StaticResource Label2}"></Label>
+        <TextBox Grid.Row="1"  Style="{StaticResource Textbox2}" Text="{Binding Path=Name, Mode=TwoWay}"></TextBox>
 
-        <Label Content="Отчество" Grid.Row="2"  Margin="0,20,0,0"></Label>
-        <TextBox Grid.Row="2" Margin="0,0,200,0" Height="25" Width="220" Text="{Binding Path=MiddleName, Mode=TwoWay}"></TextBox>
+        <Label Content="Отчество" Grid.Row="2"  Style="{StaticResource Label2}"></Label>
+        <TextBox Grid.Row="2" Style="{StaticResource Textbox2}" Text="{Binding Path=MiddleName, Mode=TwoWay}"></TextBox>
 
-        <Label Content="Дата рождения" Grid.Row="3"  Margin="0,20,0,0"></Label>
-        <DatePicker Grid.Row="3" Margin="0,0,200,0" Height="25" Width="220" Text="{Binding Path=Birthday, Mode=TwoWay}"></DatePicker>
+        <Label Content="Дата рождения" Grid.Row="3"  Style="{StaticResource Label2}"></Label>
+        <DatePicker Grid.Row="3" Style="{StaticResource DatePicker2}" Text="{Binding Path=Birthday, Mode=TwoWay}"></DatePicker>
 
-        <Label Content="Контактный телефон" Grid.Row="4"  Margin="0,20,0,0"></Label>
-        <TextBox Grid.Row="4" Margin="0,0,200,0" Height="25" Width="220" Text="{Binding Path=PhoneNumber, Mode=TwoWay}"></TextBox>
+        <Label Content="Контактный телефон" Grid.Row="4"  Style="{StaticResource Label2}"></Label>
+        <TextBox Grid.Row="4" Style="{StaticResource Textbox2}" Text="{Binding Path=PhoneNumber, Mode=TwoWay}"></TextBox>
 
 
         <Button Style="{StaticResource AddButtonStyle}"  Grid.Row="5" Click="AddPatient_Click"></Button>

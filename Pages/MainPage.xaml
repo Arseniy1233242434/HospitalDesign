@@ -24,22 +24,22 @@
                 <RowDefinition Height="38"></RowDefinition>
             </Grid.RowDefinitions>
             <Label Content="Фамилия:" Grid.Row="0"></Label>
-            <Label Content="{Binding Path=Doctor1.LastName, Mode=OneWay}" Grid.Row="0" Margin="60,0,0,0"></Label>
+            <Label Content="{Binding Path=Doctor1.LastName, Mode=OneWay}" Grid.Row="0" Style="{StaticResource Label5}"></Label>
 
             <Label Content="Имя:" Grid.Row="1"></Label>
-            <Label Content="{Binding Path=Doctor1.Name, Mode=OneWay}" Grid.Row="1" Margin="60,0,0,0"></Label>
+            <Label Content="{Binding Path=Doctor1.Name, Mode=OneWay}" Grid.Row="1" Style="{StaticResource Label5}"></Label>
 
             <Label Content="Отчество:" Grid.Row="2"></Label>
-            <Label Content="{Binding Path=Doctor1.MiddleName, Mode=OneWay}" Grid.Row="2" Margin="70,0,0,0"></Label>
+            <Label Content="{Binding Path=Doctor1.MiddleName, Mode=OneWay}" Grid.Row="2" Style="{StaticResource Label5}"></Label>
 
             <Label Content="Специализация:" Grid.Row="3"></Label>
-            <Label Content="{Binding Path=Doctor1.Specialization, Mode=OneWay}" Grid.Row="3" Margin="100,0,0,0"></Label>
+            <Label Content="{Binding Path=Doctor1.Specialization, Mode=OneWay}" Grid.Row="3" Style="{StaticResource Label5}"></Label>
 
             <Label Content="пациентов:" Grid.Row="4"></Label>
-            <Label Content="{Binding Path= patientcount.ID, Mode=OneWay}" Grid.Row="4" Margin="100,0,0,0"></Label>
+            <Label Content="{Binding Path= patientcount.ID, Mode=OneWay}" Grid.Row="4" Style="{StaticResource Label5}"></Label>
 
             <Label Content="Докторов:" Grid.Row="5"></Label>
-            <Label Content="{Binding Path=patientcount.Password, Mode=OneWay}" Grid.Row="5" Margin="100,0,0,0"></Label>
+            <Label Content="{Binding Path=patientcount.Password, Mode=OneWay}" Grid.Row="5" Style="{StaticResource Label5}"></Label>
         </Grid>
         <Grid Grid.Column="1" >
             <Grid.RowDefinitions>
@@ -50,10 +50,10 @@
 
                 </RowDefinition>
             </Grid.RowDefinitions>
-            <Button Style="{StaticResource AddButtonStyle}"  Width="100" Height="40" Margin="0,0,290,0" Click="Create_Patient"></Button>
-            <Button Style="{StaticResource StandartButtonStyle}" Content="Начать прием" Width="90" Height="40" Margin="0,0,90,0" Click="Button_Click"></Button>
-            <Button Style="{StaticResource StandartButtonStyle}" Content="Изменить информацию" Width="150" Height="40" Margin="160,0,0,0" Click="SavePatient"></Button>
-            <Button Style="{StaticResource DeleteButtonStyle}"  Width="40" Height="40" Margin="360,0,0,0" Click="DeletePatient_click"></Button>
+            <Button Style="{StaticResource Button2}"  Click="Create_Patient"></Button>
+            <Button Style="{StaticResource Button3}" Content="Начать прием" Click="Button_Click"></Button>
+            <Button Style="{StaticResource Button4}" Content="Изменить информацию"  Click="SavePatient"></Button>
+            <Button Style="{StaticResource Button5}"   Click="DeletePatient_click"></Button>
             <ListView
 Grid.Row="1" 
 ItemsSource="{Binding  Patientss}"  

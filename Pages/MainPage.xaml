@@ -7,7 +7,9 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MainPage">
-
+    <Page.Resources>
+        <local:DiscountConverter x:Key="g"/>
+    </Page.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -83,7 +85,7 @@ ItemsSource="{Binding  Patientss}"
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="Контактный телефон: "/>
-                                <TextBlock Text="{Binding PhoneNumber}"/>
+                                <TextBlock Text="{Binding PhoneNumber,Converter={StaticResource g} ,StringFormat={}{0:# (###) ### ## ##}}"/>
                             </StackPanel>
                         </StackPanel>
                     </DataTemplate>

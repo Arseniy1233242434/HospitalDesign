@@ -7,7 +7,11 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AppointmentPage">
-
+    <Page.Resources>
+        <local:Converterr x:Key="g"/>
+        <local:Converter1 x:Key="g1"/>
+        <local:Converter2 x:Key="g2"/>
+    </Page.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -15,6 +19,7 @@
         </Grid.ColumnDefinitions>
         <Grid x:Name="AddPatient">
             <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -24,17 +29,51 @@
 
             </Grid.RowDefinitions>
 
-            <Label Content="Дата приёма" Grid.Row="0" Style="{StaticResource Label1}"></Label>
-            <DatePicker Grid.Row="0" Style="{StaticResource Datepicker1}" Text="{Binding Path=Appointment.Date, Mode=TwoWay}"></DatePicker>
 
-            <Label Content="Диагноз" Grid.Row="1" Style="{StaticResource Label1}"></Label>
-            <TextBox Style="{StaticResource Textbox1}" Grid.Row="1"  Text="{Binding Path=Appointment.Diagnosis, Mode=TwoWay}"></TextBox>
-            <Label Content="Рекомендации" Grid.Row="2" Style="{StaticResource Label1}"></Label>
-            <TextBox Grid.Row="2" Style="{StaticResource Textbox1}" Text="{Binding Path=Appointment.Recomendations, Mode=TwoWay}"></TextBox>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel  Orientation="Horizontal" Grid.Column="0">
+                    <TextBlock Text="Возраст: "/>
+                    <TextBlock Text="{Binding Path=Patient.Birthday, Converter={StaticResource g}}"/>
+                </StackPanel>
+                <StackPanel  Orientation="Horizontal" Grid.Column="1">
+
+                    <TextBlock Text="{Binding Path=Patient.Birthday, Converter={StaticResource g1}}"/>
+                </StackPanel>
+                <StackPanel  Orientation="Horizontal" Grid.Column="2">
+
+                    <TextBlock Text="{Binding Path=Patient.Appointments[0], Converter={StaticResource g2}, FallbackValue='Первый приём'}"/>
+                </StackPanel>
 
 
-            <Button Style="{StaticResource AddButtonStyle}" Grid.Row="3" Click="Button_Click"></Button>
-            <Button Style="{StaticResource StandartButtonStyle}" Content="Назад" Grid.Row="4" Click="Button_Click_1"></Button>
+
+            </Grid>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <Label Content="Дата приёма" Grid.Row="1" Style="{StaticResource Label1}"></Label>
+            <DatePicker Grid.Row="1" Style="{StaticResource Datepicker1}" Text="{Binding Path=Appointment.Date, Mode=TwoWay}"></DatePicker>
+
+            <Label Content="Диагноз" Grid.Row="2" Style="{StaticResource Label1}"></Label>
+            <TextBox Style="{StaticResource Textbox1}" Grid.Row="2"  Text="{Binding Path=Appointment.Diagnosis, Mode=TwoWay}"></TextBox>
+            <Label Content="Рекомендации" Grid.Row="3" Style="{StaticResource Label1}"></Label>
+            <TextBox Grid.Row="3" Style="{StaticResource Textbox1}" Text="{Binding Path=Appointment.Recomendations, Mode=TwoWay}"></TextBox>
+
+
+            <Button Style="{StaticResource AddButtonStyle}" Grid.Row="4" Click="Button_Click"></Button>
+            <Button Style="{StaticResource StandartButtonStyle}" Content="Назад" Grid.Row="5" Click="Button_Click_1"></Button>
         </Grid>
         <Grid Grid.Column="1" >
             <Grid.RowDefinitions>

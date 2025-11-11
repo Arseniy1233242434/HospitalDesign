@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace WpfApp3.Pages
     /// </summary>
     public partial class CreatePatient : Page
     {
+        static public bool phone=false;
         Patient Patient=new Patient();
        
         public CreatePatient()
@@ -48,6 +50,11 @@ namespace WpfApp3.Pages
             if (Patient.Name == "" || Patient.LastName == "" || Patient.MiddleName == "" || Patient.Name == "" || Patient.Birthday == "" || Patient.PhoneNumber == "")
             {
                 MessageBox.Show("Не все поля заполнены!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            if(!phone)
+            {
+                MessageBox.Show("Непрвавильный формат номера!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             if (!f)
@@ -78,6 +85,31 @@ namespace WpfApp3.Pages
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
+        }
+    }
+    public class IsNumberCorrect : ValidationRule
+    {
+        public override ValidationResult Validate(object value, CultureInfo
+        cultureInfo)
+        {
+            var input = (value ?? "").ToString().Trim();
+
+            if ( input.Length != 11)
+            {
+                CreatePatient.phone = false;
+                return new ValidationResult(false, "Неправильный формат номера");
+            }
+            for(int i=0;i<11;i++)
+            {
+                if (!char.IsNumber(input[i]))
+                {
+                    CreatePatient.phone = false;
+                    return new ValidationResult(false, "Неправильный формат номера");
+                }
+
+            }
+            CreatePatient.phone = true;
+            return ValidationResult.ValidResult;
         }
     }
 }

@@ -14,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
+using System.Globalization;
+using System.Collections.ObjectModel;
 
 namespace WpfApp3.Pages
 {
@@ -76,6 +78,67 @@ Patient.Appointments = new();
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
+        }
+
+    }
+    public class Converterr : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter,
+        CultureInfo culture)
+        {
+            var date = DateTime.Now.Year-DateTime.Parse(value.ToString()).Year;
+            if(DateTime.Parse(value.ToString())>DateTime.Now.AddYears(-date))
+            {
+                date--;
+            }
+           return date;
+        }
+        public object ConvertBack(object value, Type targetType, object parameter,
+        CultureInfo culture)
+        {
+            return value.ToString();
+        }
+    }
+    public class Converter1 : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter,
+        CultureInfo culture)
+        {
+            var date = DateTime.Now.Year - DateTime.Parse(value.ToString()).Year;
+            if (DateTime.Parse(value.ToString()) > DateTime.Now.AddYears(-date))
+            {
+                date--;
+            }
+            if(date>=18)
+            {
+                return "совершеннолетний";
+            }
+            return "несовершеннолетний";
+        }
+        public object ConvertBack(object value, Type targetType, object parameter,
+        CultureInfo culture)
+        {
+            return value.ToString();
+        }
+    }
+    public class Converter2 : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter,
+        CultureInfo culture)
+        {
+            if (value==null)
+            {
+                return "Первый приём";
+            }
+            var f = (Appointment)value;
+            TimeSpan d = DateTime.Now - DateTime.Parse(f.Date);
+            return "Дней с предыдущего приёма: "+ (int)d.TotalDays;
+
+        }
+        public object ConvertBack(object value, Type targetType, object parameter,
+        CultureInfo culture)
+        {
+            return value.ToString();
         }
     }
 }

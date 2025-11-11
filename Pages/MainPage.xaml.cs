@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,7 @@ namespace WpfApp3.Pages
     /// </summary>
     public partial class MainPage : Page
     {
+        
         public static ObservableCollection<Patient> Patientss { get; set; } = new();
         public Doctor Doctor1 { get; set; }
         public  Patient SelectedUser { get; set; }
@@ -97,6 +99,19 @@ namespace WpfApp3.Pages
             
             File.Delete(fileName);
             Patientss.Remove(SelectedUser);
+        }
+    }
+    public class DiscountConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter,
+        CultureInfo culture)
+        {
+           return long.Parse(value.ToString());
+        }
+        public object ConvertBack(object value, Type targetType, object parameter,
+        CultureInfo culture)
+        {
+            return value.ToString();
         }
     }
 }

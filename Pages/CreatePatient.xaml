@@ -32,7 +32,14 @@
         <DatePicker Grid.Row="3" Style="{StaticResource DatePicker2}" Text="{Binding Path=Birthday, Mode=TwoWay}"></DatePicker>
 
         <Label Content="Контактный телефон" Grid.Row="4"  Style="{StaticResource Label2}"></Label>
-        <TextBox Grid.Row="4" Style="{StaticResource Textbox2}" Text="{Binding Path=PhoneNumber, Mode=TwoWay}"></TextBox>
+
+        <TextBox Grid.Row="4" Style="{StaticResource Textbox2}">
+            <Binding Path="PhoneNumber" Mode="TwoWay" >
+                <Binding.ValidationRules>
+                    <local:IsNumberCorrect />
+                </Binding.ValidationRules>
+            </Binding>
+        </TextBox>
 
 
         <Button Style="{StaticResource AddButtonStyle}"  Grid.Row="5" Click="AddPatient_Click"></Button>

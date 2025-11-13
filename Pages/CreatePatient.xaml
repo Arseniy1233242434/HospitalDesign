@@ -20,26 +20,91 @@
 
         </Grid.RowDefinitions>
         <Label Content="Фамилия" Grid.Row="0" Style="{StaticResource Label2}"></Label>
-        <TextBox Grid.Row="0" Style="{StaticResource Textbox2}" Text="{Binding Path=LastName, Mode=TwoWay}"></TextBox>
+        <TextBox Grid.Row="0" Style="{StaticResource Textbox2}" x:Name="tt">
+            <Binding Path="LastName" Mode="TwoWay" >
+                <Binding.ValidationRules>
+                    <local:IsStringCorrect />
+                </Binding.ValidationRules>
+            </Binding>
+
+        </TextBox>
 
         <Label Content="Имя" Grid.Row="1" Style="{StaticResource Label2}"></Label>
-        <TextBox Grid.Row="1"  Style="{StaticResource Textbox2}" Text="{Binding Path=Name, Mode=TwoWay}"></TextBox>
+        <TextBox Grid.Row="1"  Style="{StaticResource Textbox2}" x:Name="tt1">
+            <Binding Path="Name" Mode="TwoWay" >
+                <Binding.ValidationRules>
+                    <local:IsStringCorrect />
+                </Binding.ValidationRules>
+            </Binding>
+
+
+        </TextBox>
 
         <Label Content="Отчество" Grid.Row="2"  Style="{StaticResource Label2}"></Label>
-        <TextBox Grid.Row="2" Style="{StaticResource Textbox2}" Text="{Binding Path=MiddleName, Mode=TwoWay}"></TextBox>
+        <TextBox Grid.Row="2" Style="{StaticResource Textbox2}" x:Name="tt2">
+
+            <Binding Path="MiddleName" Mode="TwoWay" >
+                <Binding.ValidationRules>
+                    <local:IsStringCorrect />
+                </Binding.ValidationRules>
+            </Binding>
+
+        </TextBox>
 
         <Label Content="Дата рождения" Grid.Row="3"  Style="{StaticResource Label2}"></Label>
         <DatePicker Grid.Row="3" Style="{StaticResource DatePicker2}" Text="{Binding Path=Birthday, Mode=TwoWay}"></DatePicker>
 
         <Label Content="Контактный телефон" Grid.Row="4"  Style="{StaticResource Label2}"></Label>
 
-        <TextBox Grid.Row="4" Style="{StaticResource Textbox2}">
+        <TextBox Grid.Row="4" Style="{StaticResource Textbox2}" x:Name="f1">
             <Binding Path="PhoneNumber" Mode="TwoWay" >
                 <Binding.ValidationRules>
                     <local:IsNumberCorrect />
                 </Binding.ValidationRules>
             </Binding>
         </TextBox>
+        <ItemsControl Foreground="Red" Grid.Row="4" Margin="180,43,0,0"
+FontSize="12"
+ItemsSource="{Binding ElementName=f1, Path=
+(Validation.Errors)}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding ErrorContent}" TextWrapping="Wrap"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        
+        <ItemsControl Foreground="Red" Grid.Row="0" Margin="180,43,0,0"
+FontSize="12"
+ItemsSource="{Binding ElementName=tt, Path=
+(Validation.Errors)}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding ErrorContent}" TextWrapping="Wrap"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <ItemsControl Foreground="Red" Grid.Row="1" Margin="180,43,0,0"
+FontSize="12"
+ItemsSource="{Binding ElementName=tt1, Path=
+(Validation.Errors)}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding ErrorContent}" TextWrapping="Wrap"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <ItemsControl Foreground="Red" Grid.Row="2" Margin="180,43,0,0"
+FontSize="12"
+ItemsSource="{Binding ElementName=tt2, Path=
+(Validation.Errors)}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding ErrorContent}" TextWrapping="Wrap"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
 
 
         <Button Style="{StaticResource AddButtonStyle}"  Grid.Row="5" Click="AddPatient_Click"></Button>

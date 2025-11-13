@@ -11,6 +11,7 @@
         <local:Converterr x:Key="g"/>
         <local:Converter1 x:Key="g1"/>
         <local:Converter2 x:Key="g2"/>
+        <local:IsDateCorrect x:Key="g3"/>
     </Page.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -46,25 +47,39 @@
                 </StackPanel>
                 <StackPanel  Orientation="Horizontal" Grid.Column="2">
 
-                    <TextBlock Text="{Binding Path=Patient.Appointments[0], Converter={StaticResource g2}, FallbackValue='Первый приём'}"/>
+                    <TextBlock Text="{Binding Path=Patient, Converter={StaticResource g2}, FallbackValue='Первый приём'}"/>
                 </StackPanel>
 
 
 
             </Grid>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
+            <!--<Binding.ValidationRules>
+                <local:IsDateCorrect />
+            </Binding.ValidationRules>-->
+
+
+
+
+
             <Label Content="Дата приёма" Grid.Row="1" Style="{StaticResource Label1}"></Label>
-            <DatePicker Grid.Row="1" Style="{StaticResource Datepicker1}" Text="{Binding Path=Appointment.Date, Mode=TwoWay}"></DatePicker>
+            <DatePicker Grid.Row="1" Style="{StaticResource Datepicker1}" Text="{Binding Path=Appointment.Date, Mode=TwoWay}">
+                <!--<DatePicker.SelectedDate>
+                    <Binding Path="Appointment.Date" Mode="TwoWay">
+                        <Binding.ValidationRules>
+                            <local:IsDateCorrect />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </DatePicker.SelectedDate>-->
+               
+                
+               
+            </DatePicker>
 
             <Label Content="Диагноз" Grid.Row="2" Style="{StaticResource Label1}"></Label>
             <TextBox Style="{StaticResource Textbox1}" Grid.Row="2"  Text="{Binding Path=Appointment.Diagnosis, Mode=TwoWay}"></TextBox>

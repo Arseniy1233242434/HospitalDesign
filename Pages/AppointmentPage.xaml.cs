@@ -98,6 +98,7 @@ Patient.Appointments = new();
         {
             return value.ToString();
         }
+        
     }
     public class Converter1 : IValueConverter
     {
@@ -126,12 +127,13 @@ Patient.Appointments = new();
         public object Convert(object value, Type targetType, object parameter,
         CultureInfo culture)
         {
-            if (value==null)
+            var t = (Patient)value;
+            if (t.Appointments.Count==0)
             {
                 return "Первый приём";
             }
-            var f = (Appointment)value;
-            TimeSpan d = DateTime.Now - DateTime.Parse(f.Date);
+            
+            TimeSpan d = DateTime.Now - DateTime.Parse(t.Appointments[t.Appointments.Count-1].Date);
             return "Дней с предыдущего приёма: "+ (int)d.TotalDays;
 
         }
@@ -141,4 +143,22 @@ Patient.Appointments = new();
             return value.ToString();
         }
     }
+    public class IsDateCorrect : ValidationRule
+    {
+        public override ValidationResult Validate(object value, CultureInfo
+        cultureInfo)
+        {
+            
+            //var input = value.ToString().Trim();
+
+            //if (!DateTime.TryParse(input,out DateTime a))
+            //{
+            //    MessageBox.Show("Неправильный формат даты");
+            //    return new ValidationResult(false, "Неправильный формат даты");
+            //}
+            
+            return ValidationResult.ValidResult;
+        }
+    }
 }
+//|| DateTime.Now<DateTime.Parse(input)

@@ -112,4 +112,25 @@ namespace WpfApp3.Pages
             return ValidationResult.ValidResult;
         }
     }
+    public class IsStringCorrect : ValidationRule
+    {
+        public override ValidationResult Validate(object value, CultureInfo
+        cultureInfo)
+        {
+            var input = (value ?? "").ToString().Trim();
+
+            
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (!char.IsLetter(input[i]))
+                {
+                    CreatePatient.phone = false;
+                    return new ValidationResult(false, "Неправильный формат");
+                }
+
+            }
+            CreatePatient.phone = true;
+            return ValidationResult.ValidResult;
+        }
+    }
 }

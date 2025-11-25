@@ -1,21 +1,27 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <SolidColorBrush x:Key="StandartButtonBackground" Color="#4682B4"/>
+
+    <SolidColorBrush x:Key="StandartButtonBackground" Color="#33B8B1"/>
     <SolidColorBrush x:Key="StandartButtonHover" Color="Blue"/>
+    
     <SolidColorBrush x:Key="StandartButtonPressed" Color="#E0FFFF"/>
-    <SolidColorBrush x:Key="StandartButtonForeground" Color="Black"/>
+    <SolidColorBrush x:Key="StandartButtonForeground" Color="#444B54"/>
     <SolidColorBrush x:Key="StandartButtonBorder" Color="#005A9E"/>
 
     <SolidColorBrush x:Key="AddButtonBackground" Color="#6B8E23"/>
     <SolidColorBrush x:Key="AddButtonHover" Color="#3CB371"/>
     <SolidColorBrush x:Key="AddButtonPressed" Color="#228B22"/>
 
-    <SolidColorBrush x:Key="DeleteButtonBackground" Color="#FF8C00"/>
+    <SolidColorBrush x:Key="DeleteButtonBackground" Color="#E65A4F"/>
     <SolidColorBrush x:Key="DeleteButtonHover" Color="#FFA500"/>
     <SolidColorBrush x:Key="DeleteButtonPressed" Color="#FF6347"/>
 
+    <SolidColorBrush x:Key="TextBoxBackground" Color="#F0F6F8"/>
+    <SolidColorBrush x:Key="WindowBackground" Color="#F5FAFB"/>
 
-    <SolidColorBrush x:Key="WindowBackground" Color="#E0FFFF"/>
-
-
+    <SolidColorBrush x:Key="ListViewBackground" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="ListViewTargetElement" Color="#3A9AD9"/>
+    <SolidColorBrush x:Key="ValidationBackground" Color="#FFE8E8"/>
+    <SolidColorBrush x:Key="ValidationForeground" Color="#D93025"/>
+    
 </ResourceDictionary>

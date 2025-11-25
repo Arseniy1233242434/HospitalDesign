@@ -5,52 +5,66 @@
     </Style>
 
 
-    <Style TargetType="TextBox" x:Key="Textbox1">
+    <Style TargetType="TextBox" x:Key="Textbox1" BasedOn="{StaticResource MaterialDesignTextBox}">
         <Setter Property="Margin" Value="60,0,0,0"/>
         <Setter Property="Width" Value="220"/>
         <Setter Property="Height" Value="25"/>
+        <Setter Property="Background" Value="{DynamicResource TextBoxBackground}"/>
+        <Setter Property="AutomationProperties.Name" Value="f"/>
+
+
     </Style>
-    <Style TargetType="TextBox" x:Key="Textbox2">
+    <Style TargetType="TextBox" x:Key="Textbox2" BasedOn="{StaticResource MaterialDesignTextBox}">
         <Setter Property="Margin" Value="0,0,200,0"/>
         <Setter Property="Width" Value="220"/>
         <Setter Property="Height" Value="25"/>
+        <Setter Property="Background" Value="{DynamicResource TextBoxBackground}"/>
+        <Setter Property="AutomationProperties.Name" Value="f"/>
     </Style>
-    <Style TargetType="DatePicker" x:Key="Datepicker1">
+    <Style TargetType="DatePicker" x:Key="Datepicker1" BasedOn="{StaticResource MaterialDesignDatePicker}">
         <Setter Property="Margin" Value="60,0,0,0"/>
         <Setter Property="Width" Value="220"/>
         <Setter Property="Height" Value="25"/>
+        <Setter Property="AutomationProperties.Name" Value="f"/>
+        
     </Style>
-    <Style TargetType="DatePicker" x:Key="DatePicker2">
+
+    <Style TargetType="DatePicker" x:Key="DatePicker2" BasedOn="{StaticResource MaterialDesignFloatingHintDatePicker}">
         <Setter Property="Margin" Value="0,0,200,0"/>
         <Setter Property="Width" Value="220"/>
         <Setter Property="Height" Value="25"/>
+        <Setter Property="AutomationProperties.Name" Value="f"/>
     </Style>
-    <Style TargetType="Label" x:Key="Label1" >
+    <Style TargetType="Label" x:Key="Label1" BasedOn="{StaticResource MaterialDesignLabel}">
         <Setter Property="Margin" Value="0,35,0,0"/>
         <Setter Property="Foreground" Value="{DynamicResource StandartButtonForeground}"/>
     </Style>
-    <Style TargetType="Label" x:Key="Label2">
+    <Style TargetType="Label" x:Key="Label2" BasedOn="{StaticResource MaterialDesignLabel}">
         <Setter Property="Margin" Value="0,20,0,0"/>
         <Setter Property="Foreground" Value="{DynamicResource StandartButtonForeground}"/>
     </Style>
-    <Style TargetType="Label" x:Key="Label3">
+    <Style TargetType="Label" x:Key="Label3" BasedOn="{StaticResource MaterialDesignLabel}">
         <Setter Property="Margin" Value="200,105,0,0"/>
         <Setter Property="Foreground" Value="{DynamicResource StandartButtonForeground}"/>
     </Style>
-    <Style TargetType="Label" x:Key="Label4">
+    <Style TargetType="Label" x:Key="Label4" BasedOn="{StaticResource MaterialDesignLabel}">
         <Setter Property="Margin" Value="200,34,0,0"/>
         <Setter Property="Foreground" Value="{DynamicResource StandartButtonForeground}"/>
     </Style>
-
-    <Style TargetType="TextBox" x:Key="Textbox3">
+    
+    <Style TargetType="TextBox"  x:Key="Textbox3" BasedOn="{StaticResource MaterialDesignTextBox}">
         <Setter Property="Margin" Value="80,90,0,0"/>
         <Setter Property="Width" Value="200"/>
         <Setter Property="Height" Value="25"/>
+        <Setter Property="AutomationProperties.Name" Value="f"/>
+        <Setter Property="Background" Value="{DynamicResource TextBoxBackground}"/>
     </Style>
-    <Style TargetType="TextBox" x:Key="Textbox4">
+    <Style TargetType="TextBox" x:Key="Textbox4" BasedOn="{StaticResource MaterialDesignTextBox}">
         <Setter Property="Margin" Value="80,0,0,0"/>
         <Setter Property="Width" Value="200"/>
         <Setter Property="Height" Value="25"/>
+        <Setter Property="Background" Value="{DynamicResource TextBoxBackground}"/>
+        <Setter Property="AutomationProperties.Name" Value="f"/>
     </Style>
 
     <Style TargetType="Button" x:Key="Button1" BasedOn="{StaticResource StandartButtonStyle}">
@@ -58,7 +72,7 @@
         <Setter Property="Width" Value="340"/>
         <Setter Property="Height" Value="30"/>
     </Style>
-    <Style TargetType="Label" x:Key="Label5">
+    <Style TargetType="Label" x:Key="Label5" BasedOn="{StaticResource MaterialDesignLabel}">
         <Setter Property="Margin" Value="100,0,0,0"/>
         <Setter Property="Foreground" Value="{DynamicResource StandartButtonForeground}"/>
     </Style>
@@ -82,4 +96,37 @@
         <Setter Property="Width" Value="40"/>
         <Setter Property="Height" Value="40"/>
     </Style>
+    <Style TargetType="ListView" x:Key="ListView">
+        <Setter Property="Background" Value="{DynamicResource ListViewBackground}"/>
+      
+    </Style>
+    
+    <Style TargetType="ItemsControl" x:Key="Validation">
+
+        <Setter Property="Foreground" Value="{DynamicResource ValidationForeground}"/>
+        
+        
+        <Setter Property="Margin" Value="180,43,0,0"/>
+        <Style.Triggers>
+            <Trigger Property="HasItems" Value="True">
+              
+                <Setter Property="Visibility" Value="Visible"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="Validation1">
+
+        <Setter Property="Foreground" Value="{DynamicResource ValidationForeground}"/>
+        
+
+        <Setter Property="Margin" Value="180,43,0,0"/>
+        <Style.Triggers>
+            <Trigger Property="Text" Value="Неправильный формат">
+                <Setter Property="Background" Value="{DynamicResource ValidationBackground}"/>
+                <Setter Property="Visibility" Value="Visible"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
 </ResourceDictionary>

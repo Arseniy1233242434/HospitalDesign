@@ -3,4 +3,7 @@
     <Style TargetType="Frame" >
         <Setter Property="Background" Value="{DynamicResource WindowBackground}"/>
     </Style>
+    <Style TargetType="DatePickerTextBox">
+        <Setter Property="AutomationProperties.Name" Value="gggyygh"/>
+    </Style>
 </ResourceDictionary>

@@ -59,8 +59,8 @@
             <ListView
 Grid.Row="1" 
 ItemsSource="{Binding  Patientss}"  
-                SelectedItem="{Binding SelectedUser}">
-                <ListView.ItemTemplate >
+                SelectedItem="{Binding SelectedUser}" Style="{StaticResource ListView}">
+                <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
                             <StackPanel Orientation="Horizontal">

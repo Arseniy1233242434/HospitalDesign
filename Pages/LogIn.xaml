@@ -17,10 +17,10 @@
                 <RowDefinition Height="80"></RowDefinition>
             </Grid.RowDefinitions>
             <Label Content="Идентификатор" Style="{StaticResource Label3}" Grid.Row="0"></Label>
-            <TextBox Grid.Row="0" Style="{StaticResource Textbox3}" Text="{Binding Path=ID, Mode=OneWayToSource}"></TextBox>
+            <TextBox AutomationProperties.Name="h" Grid.Row="0" Style="{StaticResource Textbox3}" Text="{Binding Path=ID, Mode=OneWayToSource}"></TextBox>
 
             <Label Content="Пароль" Grid.Row="1"  Style="{StaticResource Label4}"></Label>
-            <TextBox Grid.Row="1" Style="{StaticResource Textbox4}" Text="{Binding Path=Password, Mode=OneWayToSource}"></TextBox>
+            <TextBox Grid.Row="1" Style="{StaticResource Textbox4}" Text="{Binding Path=Password, Mode=OneWayToSource}"  ></TextBox>
             <Button Style="{StaticResource Button1}" Content="Войти" Grid.Row="2"   Click="Authorisation_Click"></Button>
             <Button Style="{StaticResource Button1}" Content="Регистрация" Grid.Row="3"    Click="Registration_Click"></Button>
         </Grid>
